@@ -32,12 +32,12 @@ public class ArrayDictionary<E,T> {
 
     //returns true if the dictionary is empty
     boolean isEmpty(){
-        return false;
+        return keys.isEmpty();
     };
 
     //returns the number of key-value pairs in the dictionary
     int size(){
-        return 0;
+        return size;
     };
 
     //returns a Collection¹ of keys
