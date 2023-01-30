@@ -1,9 +1,16 @@
+import java.util.ArrayList;
 import java.util.Collection;
 
 public class ArrayDictionary<E,T> {
-    /*  A Java dictionary should use generics for the
-     *  types of both key and value. E and T here.
-     */
+    private ArrayList<E> keys;
+    private ArrayList<T> values;
+    private int size;
+
+    public ArrayDictionary(){
+        keys = new ArrayList<>();
+        values = new ArrayList<>();
+        size = 0;
+    };
 
     //add an key-value pair to the dictionary
     void put(E key, T value){};
