@@ -25,7 +25,7 @@ public class ArrayDictionary<E,T> {
 
     //get the value associated with a given key
     T get(E key){
-        if (keys.contains(key)){
+        if (contains(key)){
             return values.get(keys.indexOf(key));
         } else {
             return null;
@@ -34,7 +34,7 @@ public class ArrayDictionary<E,T> {
 
     //remove a key-value pair and return its value
     T remove(E key){
-        if (keys.contains(key)){
+        if (contains(key)){
             T val = values.get(keys.indexOf(key));
             values.remove(keys.indexOf(key));
             keys.remove(key);
@@ -47,7 +47,7 @@ public class ArrayDictionary<E,T> {
 
     //returns true if the given key has an associated value
     boolean contains(E key){
-        return false;
+        return keys.contains(key);
     }
 
     //returns true if the dictionary is empty
