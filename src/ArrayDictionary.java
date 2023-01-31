@@ -62,11 +62,11 @@ public class ArrayDictionary<E,T> {
 
     //returns a Collection¹ of keys
     Collection<E> keys(){
-        return null;
+        return new ArrayList<>(keys);
     }
 
     //returns a Collection of values
     Collection<T>  values(){
-        return null;
+        return new ArrayList<>(values);
     }
 }
