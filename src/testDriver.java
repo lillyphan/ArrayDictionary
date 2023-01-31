@@ -18,5 +18,15 @@ public class testDriver {
         System.out.println("1: " + dict.remove("A"));
         System.out.println("null: " + dict.remove("C"));
         System.out.println("1: " + dict.size());
+
+        System.out.println("true: " + dict.contains("B"));
+        System.out.println("false: " + dict.contains("C"));
+
+        dict.put("C", 3);
+        dict.put("D", 4);
+        dict.put("Lilly", 14);
+
+        System.out.println("[B, C, D, Lilly]: " + dict.keys());
+        System.out.println("[2, 3, 4, 14]: " + dict.values());
     }
 }
