@@ -52,7 +52,7 @@ public class ArrayDictionary<E,T> {
 
     //returns true if the dictionary is empty
     boolean isEmpty(){
-        return false;
+        return keys.isEmpty();
     }
 
     //returns the number of key-value pairs in the dictionary
