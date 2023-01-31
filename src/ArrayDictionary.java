@@ -1,47 +1,57 @@
+/**
+ * ArrayDictionary - class that utilizes two ArrayLists to create a Dictionary data structure
+ * Author: Lilly Phan
+ * Date (last edited): 01/31/2023
+ **/
+
+//imports
 import java.util.ArrayList;
 import java.util.Collection;
 
 public class ArrayDictionary<E,T> {
-    private ArrayList<E> keys;
-    private ArrayList<T> values;
+    //intialization of instance data
+    private ArrayList<E> keys; //ArrayList of all keys in Dictionary
+    private ArrayList<T> values; //ArrayList of all values in Dictionary
     private int size;
 
+    //constructor - declares all instance data
     public ArrayDictionary(){
         keys = new ArrayList<>();
         values = new ArrayList<>();
         size = 0;
     }
 
-    //add an key-value pair to the dictionary
+    //adds a key-value pair to the dictionary
     void put(E key, T value){
-        if (keys.contains(key)){
-            System.out.println("This key already exists.");
+        if (keys.contains(key)){ //dict should not have duplicate keys
+            System.out.println("This key already exists."); //let user know when key already exists
         } else {
+            //add key and value to corresponding arrays
             keys.add(key);
             values.add(value);
-            size++;
+            size++; //increment size
         }
     }
 
     //get the value associated with a given key
     T get(E key){
         if (contains(key)){
-            return values.get(keys.indexOf(key));
+            return values.get(keys.indexOf(key)); //return the corresponding value to the key from values ArrayList
         } else {
-            return null;
+            return null; //if the key doesn't exist, return null
         }
     }
 
     //remove a key-value pair and return its value
     T remove(E key){
         if (contains(key)){
-            T val = values.get(keys.indexOf(key));
-            values.remove(keys.indexOf(key));
-            keys.remove(key);
-            size--;
+            T val = values.get(keys.indexOf(key)); //get the value of the key to return
+            values.remove(keys.indexOf(key)); //remove the value
+            keys.remove(key); //remove the key
+            size--; //decrement size
             return val;
         } else {
-            return null;
+            return null; //if the key doesn't exist, return null
         }
     }
 
@@ -63,7 +73,7 @@ public class ArrayDictionary<E,T> {
     //returns a Collection¹ of keys
     Collection<E> keys(){
         return new ArrayList<>(keys);
-    }
+    } //ArrayList is a class that uses Collections
 
     //returns a Collection of values
     Collection<T>  values(){
